@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel XP - Explore the World</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        /* Video Background */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Dark Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        /* Modern Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        header h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+        nav a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #00c2cb;
+            transition: width 0.3s ease-in-out;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .nav-btn {
+            padding: 10px 20px;
+            background: #00c2cb;
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+        .nav-btn:hover {
+            background: #0098a3;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+        .search-box {
+            padding: 12px;
+            width: 320px;
+            border: none;
+            border-radius: 25px;
+            margin-top: 15px;
+            font-size: 16px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Destinations Section */
+        .destinations {
+            text-align: center;
+            padding: 60px 20px;
+            background: #fff;
+        }
+        .destinations h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .destinations img {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            margin: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .destinations img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Video Background -->
+<div class="video-container">
+    <video autoplay loop muted>
+        <source src="vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<div class="overlay"></div>
+
+<!-- Navbar -->
+<header>
+    <h2>Travel XP</h2>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Destinations</a>
+        <a href="#">Tours</a>
+        <a href="#">Contact</a>
+        <a href="#" class="nav-btn">Book Now</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Explore the World with Travel XP</h1>
+    <input type="text" class="search-box" placeholder="Search destinations...">
+</section>
+
+<!-- Destinations -->
+<section class="destinations">
+    <h2>Popular Destinations</h2>
+    <img src="paris.jpg" alt="Paris">
+    <img src="bali.jpeg" alt="Bali">
+    <img src="newyork.jpg" alt="New York">
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Travel XP | Designed by Aastha</p>
+</footer>
+
+</body>
+</html>
